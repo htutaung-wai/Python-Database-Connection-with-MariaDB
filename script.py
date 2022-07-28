@@ -1,4 +1,6 @@
+import mysql.connector as mariadb
 import getpass
+
 hostname = input("Enter the hostname : ")
 username = input("Enter the username : ")
 database = input("Enter the database name : ")
@@ -9,3 +11,8 @@ print("Hostname : ",hostname)
 print("Username : ",username)
 print("Database : ",database)
 print("Password : ",password)
+
+con = mariadb.connect(hsot=hostname,user=username,database=database,password=password)
+
+print("Connection Established Successfully!")
+con.close()
